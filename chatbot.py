@@ -60,20 +60,6 @@ if __name__ == "__main__":
       speak("Opening Microsoft Edge")
       os.system("microsoftedge")
 
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and ("browser" in ip):                                                   #browser
-      donot(ip)
-      speak("Two browsers detected. Google Chrome and Microsoft Edge. Which one to open?")
-      print("1. Chrome \t 2.Edge \t :- ", end='')
-      editor=input().lower()
-      if ("1" in editor) or ("chrome" in editor) or("google chrome" in editor):
-        speak("Opening Google Chrome")
-        os.system("chrome")
-      elif ("2" in editor) or ("edge" in editor) or ("microsoft edge" in editor) or ("microsoftedge" in editor):
-        speak("Opening Microsoft Edge")
-        os.system("microsoftedge")
-      else:
-        speak("Sorry, I don't understand")
-        exit()
 
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("notepad" in ip) or ("notepad-editor" in ip) or ("file" in ip)):       #notepad / any file
       donot(ip)
@@ -85,20 +71,6 @@ if __name__ == "__main__":
       speak("Opening Wordpad")
       os.system("wordpad")
 
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("editor" in ip) or ("text" in ip)):                                 #text editor
-      donot(ip)
-      speak("Two editors detected. Notepad and Wordpad. Which one to open?")
-      print("1. Notepad \t 2.Wordpad \t :- ", end='')
-      editor=input().lower()
-      if ("1" in editor) or("notepad" in editor):
-        speak("Opening Notepad")
-        os.system("notepad")
-      elif ("2" in editor) or("wordpad" in editor):
-        speak("Opening Wordpad")
-        os.system("wordpad")
-      else:
-        speak("Sorry, I don't understand")
-        exit()
       		
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("windows player" in ip) or ("windows" in ip)):           #win player
       donot(ip)
@@ -130,10 +102,6 @@ if __name__ == "__main__":
       speak("Opening Python Prompt")
       os.system("python")
 
-    elif ("clear" in ip) or ("screen" in ip) or ("cls" in ip):                                                                          #clear screen 
-      donot(ip)
-      speak("Clearing the screen")
-      os.system("cls")
 
     elif (("set" in ip) or ("show" in ip)) and ("date" in ip):                                                                          #date
       donot(ip)
@@ -145,18 +113,6 @@ if __name__ == "__main__":
       speak("Time is ")
       os.system("time") 
 
-    elif (("change" in ip) or ("apply" in ip)) and (("clr" in ip) or ("color" in ip) or ("colour" in ip)):                              #color
-      donot(ip)
-      speak("Pick the number you would like to change your text colour to?")
-      print("0-Black \t 1-Blue \t 2-Green \t 3-Aqua \t 4-Red")
-      print("5-Purple \t 6-Yellow \t 7-White \t 8-Gray \t 9-Light Blue \t :- ",end='')
-      bg=input()
-      if int(bg) in range(10):
-        os.system("color "+bg)    
-        speak("Colour changed Successfully !")
-      else:
-        speak("Sorry, Invaild input")
-        exit()
 
     elif ("hello" in ip):                                                                                                           #greet1
       speak('Hi there ! Nice to meet you')    
@@ -190,115 +146,26 @@ if __name__ == "__main__":
       speak(about)
       print(about+"(version 1.0)")
 
-    elif "wikipedia" in ip.lower():                                                                                                    #wikipedia
-      donot(ip)
-      speak("Searching Wikipedia")
-      ip=ip.replace("wikipedia","")
-      results = wikipedia.summary(ip,sentences=1)
-      speak(results)
-      speak("Thats all in brief")
-
-    elif (("open" in ip) or ("launch" in ip)) and (('instagram' in ip) or ("insta" in ip)):                                            #instagram
-      donot(ip)
-      speak("opening Insta gram")
-      webbrowser.open("https://www.instagram.com")
-
-    elif (("open" in ip) or ("launch" in ip)) and ('facebook' in ip) or ("fb" in ip):                                                  #facebook
-      donot(ip)
-      speak("opening facebook")
-      webbrowser.open("https://www.facebook.com")
-
-    elif (("open" in ip) or ("launch" in ip)) and ('youtube' in ip):                                                                  #youtube
-      donot(ip)
-      speak("opening youtube")
-      webbrowser.open("https://www.youtube.com")
-
-    elif (("open" in ip) or ("launch" in ip)) and ('whatsapp' in ip):                                                                   #whatsapp
-      donot(ip)
-      speak("opening whatsapp")
-      webbrowser.open("https://www.whatsapp.com")
-
-    elif (("open" in ip) or ("launch" in ip)) and (('mail' in ip) or ("gmail" in ip) or ("email" in ip)):                                 #gmail
-      donot(ip)
-      speak("opening G mail")
+  
       webbrowser.open("https://www.gmail.com")
-
-    elif (("show" in ip) or ("launch" in ip) or ("open" in ip)) and (('control panel' in ip) or ("control-panel" in ip)):               #control panel
-      donot(ip)
-      speak("opening Control Panel")
-      os.system("control panel")
 
     elif (("launch" in ip) or ("open" in ip)) and (('paint' in ip) or ("ms" in ip) or ("drawing board" in ip) ):                  #MS paint
       donot(ip)
       speak("opening Microsoft Paint")
       os.system("mspaint")
 
-    elif (("show" in ip) or ("open" in ip)) and (('ipconfig' in ip) or ("ip" in ip) or ("ipaddress" in ip) ):                  #ipconfig
-      donot(ip)
-      speak("opening IP Configuration")
-      os.system("ipconfig")
-
-    elif (("connect" in ip) or ("check" in ip) or ("ping" in ip)) and (('server' in ip) or ("connectivity" in ip)):                 #ping
-      donot(ip)
-      speak("Provide the I P Address to ping")
-      print("IP Address to ping :- ",end='')
-      ipadd=input()
-      speak("Pinging to "+ipadd)
-      os.system("ping "+ipadd)
 
     elif (("launch" in ip) or ("open" in ip)) and (('camera' in ip) or ("cam" in ip)):                                                #camera
       donot(ip)
       speak("opening Camera")
       os.system("start microsoft.windows.camera:")
 
-    elif (("create" in ip) or ("make" in ip)) and (('folder' in ip) or ("directory" in ip)):                                        #new folder
-      donot(ip)
-      speak("Provide name to the folder")
-      print("Provide name to the folder :- ", end='')
-      name=input()
-      os.system("mkdir "+name)
-      speak("New folder ceated successfully")
-
-    elif (("open" in ip) or ("show" in ip) or ("goto" in ip) or ("location" in ip)) and (('folder' in ip) or ("directory" in ip)):       #open folder
-      donot(ip)
-      speak("Provide Drive name to open")
-      print("Provide Drive name to show all the folders :- ", end='')
-      drive=input()
-      os.system(drive+":")
-      speak("You are in "+drive+" Drive now")
-      os.system("start "+drive+":")
-
-    elif (("connect" in ip) or ("launch" in ip) or ("open" in ip)) and (('wifi' in ip) or ("internet" in ip)):                        #wifi
-      donot(ip)
-      speak("Showing you the lists of network profiles. Please select the device")
-      wifiProfile=os.system("netsh wlan show profiles")  
-      print(wifiProfile)
-      print("Please select the device :- ", end='')
-      select=input()
-      os.system("netsh wlan connect name="+'"'+select+'"')
-
-    elif (("play" in ip) or ('sing' in ip)) and (("music" in ip) or ("song" in ip)):                                                  #songs
-      donot(ip)
-      speak("Hmm!  Well,  Ok")
-      music_dir = 'C:/Users/Akhil/Mymusic/songs'
-      musics = os.listdir(music_dir)
-      randsong = random.randrange(5)
-      os.startfile(os.path.join(music_dir,musics[randsong]))  
-
+    
+    
     elif (("exit" in ip) or ("close" in ip) or ("stop" in ip) or ("quit" in ip)  or ("abort" in ip)  or ("bye" in ip)):                #exit
       donot(ip)
       speak("Well, I'm going. Bye")
       break
 
-    elif (("shutdown" in ip) or ("turnoff" in ip)) and  (("pc" in ip) or ("computer" in ip) or ("system" in ip)):                    #shutdown
-      donot(ip)
-      speak("Shutting Down.")
-      os.system("shutdown -s")
-
     else:
-      temp = ip.replace(' ','+')                                                                                                       #google search
-      geturl="https://www.google.com/search?q="    
-      res_g = 'Sorry! I did not understand, but I will take you to internet to give you the best possible answer !'
-      print(res_g)
-      speak(res_g)
-      webbrowser.open(geturl+temp) 
+      speak("sorry")
