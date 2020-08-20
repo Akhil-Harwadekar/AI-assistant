@@ -11,6 +11,7 @@ At present it perforns operations like :-
 20) IP-configuration   21) Ping    22) Shut-Down
 
 This Assistant is smart enough; if it gets two similar apps, then it ask the user, which to open. And accordingly does the task..!
+And if it didn't understand, then it takes you to the internet to give you the best possible result.
 
 
 
