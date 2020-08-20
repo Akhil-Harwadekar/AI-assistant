@@ -29,12 +29,6 @@ def speak(audio):
   engine.say(audio)
   engine.runAndWait()
 
-def donot(ip):
-  if(("dont" in ip) or ("do not" in ip) or ("don\'t" in ip)):
-    speak("Okay...")
-    exit()
-  else:
-    return 
 
 if __name__ == "__main__":
   greet()
@@ -51,39 +45,32 @@ if __name__ == "__main__":
     ip=input().lower()
 
     if (("run" in ip) or ("launch") or ("open")) and ( ("chrome" in ip) or ("google" in ip)):                                           #chrome
-      donot(ip)
       speak("Opening Google Chrome")
       os.system("chrome")
 
-    elif (("run" in ip) or ("launch") or ("open")) and ( ("edge" in ip) or ("microsoft edge" in ip) or ("microsoftedge" in ip)):        #edge
-      donot(ip)  
+    elif (("run" in ip) or ("launch") or ("open")) and ( ("edge" in ip) or ("microsoft edge" in ip) or ("microsoftedge" in ip)):        #edge 
       speak("Opening Microsoft Edge")
       os.system("microsoftedge")
 
 
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("notepad" in ip) or ("notepad-editor" in ip) or ("file" in ip)):       #notepad / any file
-      donot(ip)
       speak("Opening Notepad")
       os.system("notepad")
 
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("wordpad" in ip) or ("wordpad-editor" in ip)):                      #wordpad
-      donot(ip)
       speak("Opening Wordpad")
       os.system("wordpad")
 
       		
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("windows player" in ip) or ("windows" in ip)):           #win player
-      donot(ip)
       speak("Opening Windows Media Player")
       os.system("wmplayer")
  
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("media" in ip) or ("player" in ip) or ("vlc" in ip)):               #vlc
-      donot(ip)
       speak("Opening VLC Player")
       os.system("vlc")
 
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("media player" in ip) or ("media" in ip) or ("player" in ip)):         #media
-      donot(ip)
       speak("Two media players detected. VLC and Windows Media Player. Which one to open?")
       print("1. VLC\t 2.Windows Media Player \t :- ", end='')
       editor=input().lower()
@@ -98,18 +85,15 @@ if __name__ == "__main__":
         exit()
 
     elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("python" in ip) or ("prompt" in ip)):                              #python 
-      donot(ip)
       speak("Opening Python Prompt")
       os.system("python")
 
 
     elif (("set" in ip) or ("show" in ip)) and ("date" in ip):                                                                          #date
-      donot(ip)
       speak("Showing today's date")
       os.system("date")
 
     elif (("set" in ip) or ("show" in ip)) and (("time" in ip) or ("clock" in ip) or ("watch") in ip):                                    #time
-      donot(ip)
       speak("Time is ")
       os.system("time") 
 
@@ -150,20 +134,17 @@ if __name__ == "__main__":
       webbrowser.open("https://www.gmail.com")
 
     elif (("launch" in ip) or ("open" in ip)) and (('paint' in ip) or ("ms" in ip) or ("drawing board" in ip) ):                  #MS paint
-      donot(ip)
       speak("opening Microsoft Paint")
       os.system("mspaint")
 
 
     elif (("launch" in ip) or ("open" in ip)) and (('camera' in ip) or ("cam" in ip)):                                                #camera
-      donot(ip)
       speak("opening Camera")
       os.system("start microsoft.windows.camera:")
 
     
     
     elif (("exit" in ip) or ("close" in ip) or ("stop" in ip) or ("quit" in ip)  or ("abort" in ip)  or ("bye" in ip)):                #exit
-      donot(ip)
       speak("Well, I'm going. Bye")
       break
 
