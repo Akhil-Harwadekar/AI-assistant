@@ -6,11 +6,11 @@ import webbrowser
 import wikipedia
 
 engine = pyttsx3.init() # object creation
-rate = engine.getProperty('rate')   # getting details of current speaking rate
-engine.setProperty('rate', 180)     # setting up new voice rate
+rate = engine.getProperty('rate')   
+engine.setProperty('rate', 180)    
 
-voices = engine.getProperty('voices')       #getting details of current voice
-engine.setProperty('voice', voices[1].id)   #changing index, changes voices.
+voices = engine.getProperty('voices')       
+engine.setProperty('voice', voices[1].id)  
 
 print('\t \t \t Welcome to Akhil\'s Program')
 print('\t \t \t----------------------------')	
@@ -280,7 +280,7 @@ if __name__ == "__main__":
     elif (("play" in ip) or ('sing' in ip)) and (("music" in ip) or ("song" in ip)):                                                  #songs
       donot(ip)
       speak("Hmm!  Well,  Ok")
-      music_dir = 'C:/Users/Akhil/OneDrive/Desktop/Assistant'
+      music_dir = 'C:/Users/Akhil/Mymusic/songs'
       musics = os.listdir(music_dir)
       randsong = random.randrange(5)
       os.startfile(os.path.join(music_dir,musics[randsong]))  
