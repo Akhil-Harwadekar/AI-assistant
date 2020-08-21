@@ -43,9 +43,9 @@ if __name__ == "__main__":
   print()
   print("\t ~~~ These are the most prominent tasks that I do for you ~~~")  
   print(" 1) Browser \t 2) Editors \t 3) Media Players \t 4) Date \t 5) Time \t 6) Calender \t 7) Wikipedia \t 8) Instagram \t 9) WhatsApp \t 10) Facebook")
-  print("11) Youtube \t 12) Gmail \t 13) Calculator \t 14) MS-Paint \t 15) Font-Colour \t 16) Create Folder \t 17) Open Folder \t 18) File Explorer \t 19) Create Secured Folder \t 20) Camera")   
-  print("21) IP-configuration \t 22) Ping \t 23) Website \t 24) WiFi \t 25) Hotspot \t 26) Available Networks \t 27) Search Apps in Store \t 28) Weather \t 29) Songs 30) Set Alarm")
-  print("31) Python \t 32) Control-Panel \t 33) Settings \t 34) Running Process \t 35) Clear Screen \t 36) LogOut \t 37) Restart \t 38) Shut-Down")
+  print("11) Youtube \t 12) Gmail \t 13) Calculator \t 14) MS-Paint \t 15) Font-Colour \t 16) Create Folder \t 17) Delete Folder \t 18) Open Folder \t 19) File Explorer \t 20) Create Secured Folder")   
+  print("21) Camera \t 22) IP-configuration \t 23) Ping \t 24) Website \t 25) WiFi \t 26) Hotspot \t 27) Available Networks \t 28) Search Apps in Store \t 29) Weather \t 30) Songs")
+  print("31) Set Alarm \t 32) Python \t 33) Control-Panel \t 34) Settings \t 35) Running Process \t 36) Clear Screen \t 37) LogOut \t 38) Restart \t 39) Shut-Down \t 40) Exit")
   print()
   while True:
     pyttsx3.speak("How can I help you ?")
@@ -322,6 +322,17 @@ if __name__ == "__main__":
       drive=input()
       speak("You are in "+drive+" Folder now")
       os.system("start "+drive)
+
+    elif (("delete" in ip) or ("remove" in ip)) and (('folder' in ip) or ("directory" in ip)):                                #delete folder
+      donot(ip)
+      speak("Provide path previous to that folder")
+      print("Provide path previous to that folder you wish to delete :- ", end='')
+      dele=input()
+      speak("Enter the folder name to delete")
+      print("Enter the folder name to delete",end='')
+      fldr=input()
+      os.system("rd /s /q "+'"'+dele+"\\"+fldr+'"')
+      speak("Folder deleted successfully.")
 
     elif (("connect" in ip) or ("launch" in ip) or ("open" in ip)) and (('wifi' in ip)):                                       #wifi
       donot(ip)
