@@ -43,7 +43,7 @@ if __name__ == "__main__":
   print()
   print("\t ~~~ These are the most prominent tasks that I do for you ~~~")  
   print(" 1) Browser \t 2) Editors \t 3) Media Players \t 4) Date \t 5) Time \t 6) Calender \t 7) Wikipedia \t 8) Instagram \t 9) WhatsApp \t 10) Facebook")
-  print("11) Youtube \t 12) Gmail \t 13) Calculator \t 14) MS-Paint \t 15) Font-Colour \t 16) Create Folder \t 17) Delete Folder \t 18) Open Folder \t 19) File Explorer \t 20) Create Secured Folder")   
+  print("11) Youtube Search \t 12) Gmail \t 13) Calculator \t 14) MS-Paint \t 15) Font-Colour \t 16) Create Folder \t 17) Delete Folder \t 18) Open Folder \t 19) File Explorer \t 20) Create Secured Folder")   
   print("21) Camera \t 22) IP-configuration \t 23) Ping \t 24) Website \t 25) WiFi \t 26) Hotspot \t 27) Available Networks \t 28) Search Apps in Store \t 29) Weather \t 30) Songs")
   print("31) Set Alarm \t 32) Python \t 33) Control-Panel \t 34) Settings \t 35) Running Process \t 36) Clear Screen \t 37) LogOut \t 38) Restart \t 39) Shut-Down \t 40) Exit")
   print()
@@ -225,6 +225,14 @@ if __name__ == "__main__":
       donot(ip)
       speak("opening youtube")
       webbrowser.open("https://www.youtube.com")
+
+    elif (("search" in ip) or ("find" in ip)) and ("youtube"):                                                                        #search anythin in youtube
+      donot(ip)
+      speak("What has to searched in youtube ?")
+      print("What has to searched in youtube ?  ",end='')
+      sear=input()
+      speak("Searching "+sear+" in youtube")
+      os.system("start https://www.youtube.com/results?search_query="+sear)
 
     elif (("open" in ip) or ("launch" in ip)) and ('whatsapp' in ip):                                                                   #whatsapp
       donot(ip)
