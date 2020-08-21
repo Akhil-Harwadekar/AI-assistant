@@ -6,12 +6,12 @@ import time
 import webbrowser
 import wikipedia
 
-engine = pyttsx3.init() 
-rate = engine.getProperty('rate')   
-engine.setProperty('rate', 180)     
+engine = pyttsx3.init() # object creation
+rate = engine.getProperty('rate')   # getting details of current speaking rate
+engine.setProperty('rate', 180)     # setting up new voice rate
 
-voices = engine.getProperty('voices')      
-engine.setProperty('voice', voices[1].id)   
+voices = engine.getProperty('voices')       #getting details of current voice
+engine.setProperty('voice', voices[1].id)   #changing index, changes voices.
 
 print('\t \t \t Welcome to Akhil\'s Program')
 print('\t \t \t----------------------------')	
@@ -41,10 +41,11 @@ def donot(ip):
 if __name__ == "__main__":
   greet()
   print()
-  print("\t ~~~ These are the most prominent tasks that I do for you ~~~")
-  print(" 1) Browser \t 2) Editors \t 3) Media Players \t 4) Date \t 5) Time \t 6) Font-Colour \t 7) Wikipedia \t 8) Instagram \t 9) WhatsApp \t 10) Facebook")
-  print("11) Youtube \t 12) Gmail \t 13) Control-Panel \t 14) WiFi \t 15) Songs \t 16) Create Folder \t 17) Open Folder \t 18) Python \t 19) MS-Paint \t 20) Camera")
-  print("20) IP-configuration \t 21) Ping \t 22) Shut-Down")
+  print("\t ~~~ These are the most prominent tasks that I do for you ~~~")  
+  print(" 1) Browser \t 2) Editors \t 3) Media Players \t 4) Date \t 5) Time \t 6) Calender \t 7) Wikipedia \t 8) Instagram \t 9) WhatsApp \t 10) Facebook")
+  print("11) Youtube \t 12) Gmail \t 13) Calculator \t 14) MS-Paint \t 15) Font-Colour \t 16) Create Folder \t 17) Open Folder \t 18) File Explorer \t 19) Create Secured Folder \t 20) Camera")   
+  print("21) IP-configuration \t 22) Ping \t 23) Website \t 24) WiFi \t 25) Hotspot \t 26) Available Networks \t 27) Search Apps in Store \t 28) Weather \t 29) Songs 30) Set Alarm")
+  print("31) Python \t 32) Control-Panel \t 33) Settings \t 34) Running Process \t 35) Clear Screen \t 36) LogOut \t 37) Restart \t 38) Shut-Down")
   print()
   while True:
     pyttsx3.speak("How can I help you ?")
@@ -102,17 +103,17 @@ if __name__ == "__main__":
         speak("Sorry, I don't understand")
         exit()
       		
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("windows player" in ip) or ("windows" in ip)):                       #win player
+    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("windows player" in ip) or ("windows  media" in ip)):                       #win player
       donot(ip)
       speak("Opening Windows Media Player")
       os.system("wmplayer")
  
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("media" in ip) or ("player" in ip) or ("vlc" in ip)):               #vlc
+    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and ("vlc" in ip):                                                            #vlc
       donot(ip)
       speak("Opening VLC Player")
       os.system("vlc")
 
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("media player" in ip) or ("media" in ip) or ("player" in ip)):         #media
+    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("media" in ip) or ("player" in ip)):                                        #media
       donot(ip)
       speak("Two media players detected. VLC and Windows Media Player. Which one to open?")
       print("1. VLC\t 2.Windows Media Player \t :- ", end='')
@@ -127,7 +128,7 @@ if __name__ == "__main__":
         speak("Sorry, I don't understand")
         exit()
 
-    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and (("python" in ip) or ("prompt" in ip)):                              #python 
+    elif (("run" in ip) or ("open" in ip) or ("launch" in ip)) and ("python" in ip):                                                              #python 
       donot(ip)
       speak("Opening Python Prompt")
       os.system("python")
@@ -145,7 +146,7 @@ if __name__ == "__main__":
     elif (("set" in ip) or ("keep" in ip)) and ("alarm" in ip):                                                                          #set alarm
       donot(ip)
       speak("Set your Alarm time")
-      os.system("start ms-clock")
+      os.system("start ms-clock:")
 
     elif (("set" in ip) or ("show" in ip)) and (("time" in ip) or ("clock" in ip) or ("watch" in ip)):                                    #time
       donot(ip)
@@ -267,7 +268,7 @@ if __name__ == "__main__":
       speak("opening IP Configuration")
       os.system("ipconfig")
 
-    elif (("connect" in ip) or ("check" in ip) or ("ping" in ip)) and (('server' in ip) or ("connectivity" in ip)):                 #ping
+    elif (("connect" in ip) or ("check" in ip) or ("ping" in ip)) and (('server' in ip) or ("ip" in ip) or ("connectivity" in ip)):                 #ping
       donot(ip)
       speak("Provide the I P Address to ping")
       print("IP Address to ping :- ",end='')
@@ -280,12 +281,12 @@ if __name__ == "__main__":
       speak("opening Camera")
       os.system("start microsoft.windows.camera:")
 
-    elif (("launch" in ip) or ("open" in ip)) and (('calci' in ip) or ("calculator" in ip)):                                         #calculator
+    elif ("launch" in ip) and (('calci' in ip) or ("calculator" in ip)):                                                         #calculator
       donot(ip)
       speak("opening calculator")
       os.system("calc")
 
-    elif (("launch" in ip) or ("open" in ip)) and ("explorer" in ip):                                                             #file explorere
+    elif (("launch" in ip) or ("open" in ip)) and (("file-explorer" in ip) or  ("explorer" in ip)):                               #file explorere
       donot(ip)
       speak("opening File Explorer")
       os.system("explorer")
@@ -319,9 +320,8 @@ if __name__ == "__main__":
       speak("Provide Folder path to open")
       print("Provide Folder path to open :- ", end='')
       drive=input()
-      fld=drive.replace('\\','/')
-      speak("You are in "+fld+" Folder now")
-      os.system("start "+fld)
+      speak("You are in "+drive+" Folder now")
+      os.system("start "+drive)
 
     elif (("connect" in ip) or ("launch" in ip) or ("open" in ip)) and (('wifi' in ip)):                                       #wifi
       donot(ip)
@@ -344,7 +344,7 @@ if __name__ == "__main__":
       htname=input()
       print("Provide hotspot password :- ",end='')
       htpswd=input()
-      os.system("netsh wlan set hostednetwork mode=alow ssid="+htname+"key="+htpswd)
+      os.system("netsh wlan set hostednetwork mode=allow ssid="+htname+"key="+htpswd)
       os.system("wlan start hostednetwork")
 
     elif (("play" in ip) or ('sing' in ip)) and (("music" in ip) or ("song" in ip)):                                                  #songs
@@ -355,7 +355,7 @@ if __name__ == "__main__":
       randsong = random.randrange(5)
       os.startfile(os.path.join(music_dir,musics[randsong]))  
 
-    elif (("show" in ip) or ("display" in ip) or ("display" in ip) or ("launch" in ip)) and  (("info" in ip) or ("system info" in ip) or ("about system" in ip)):  #system info
+    elif (("show" in ip) or ("display" in ip) or ("launch" in ip)) and  (("information" in ip) or ("system info" in ip) or ("about system" in ip)):  #system info
       donot(ip)
       speak("Showing System information")
       os.system("systeminfo")
