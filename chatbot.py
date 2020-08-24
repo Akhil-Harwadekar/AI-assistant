@@ -138,7 +138,7 @@ if __name__ == "__main__":
       speak("Clearing the screen")
       os.system("cls")
 
-    elif (("set" in ip) or ("show" in ip)) and ("date" in ip):                                                                          #date
+    elif (("show" in ip) or ("display" in ip)) and ("date" in ip):                                                                          #date
       donot(ip)
       speak("Showing today's date")
       os.system("date /t")
@@ -148,7 +148,7 @@ if __name__ == "__main__":
       speak("Set your Alarm time")
       os.system("start ms-clock:")
 
-    elif (("set" in ip) or ("show" in ip)) and (("time" in ip) or ("clock" in ip) or ("watch" in ip)):                                    #time
+    elif (("show" in ip) or ("display" in ip)) and (("time" in ip) or ("clock" in ip) or ("watch" in ip)):                                    #time
       donot(ip)
       speak("Time is ")
       os.system("time /t") 
