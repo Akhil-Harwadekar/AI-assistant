@@ -141,7 +141,7 @@ if __name__ == "__main__":
     elif (("set" in ip) or ("show" in ip)) and ("date" in ip):                                                                          #date
       donot(ip)
       speak("Showing today's date")
-      os.system("date")
+      os.system("date /t")
 
     elif (("set" in ip) or ("keep" in ip)) and ("alarm" in ip):                                                                          #set alarm
       donot(ip)
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     elif (("set" in ip) or ("show" in ip)) and (("time" in ip) or ("clock" in ip) or ("watch" in ip)):                                    #time
       donot(ip)
       speak("Time is ")
-      os.system("time") 
+      os.system("time /t") 
     
     elif (("show" in ip) or ("display" in ip) or ("open" in ip)) and (("cal" in ip) or ("calender" in ip)):                                    #calender
       donot(ip)
